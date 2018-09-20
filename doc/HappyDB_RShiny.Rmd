@@ -32,6 +32,8 @@ library(wordcloud2)
 library(gridExtra)
 library(ngram)
 library(shiny) 
+library(ggraph)
+library(igraph)
 ```
 
 ### Step 1 - Load the processed text data along with demographic information on contributors
@@ -43,6 +45,7 @@ hm_data <- read_csv("../output/processed_moments.csv")
 
 urlfile<-'https://raw.githubusercontent.com/rit-public/HappyDB/master/happydb/data/demographic.csv'
 demo_data <- read_csv(urlfile)
+write_csv(demo_data, "../output/demographic_data.csv")
 ```
 
 ### Combine both the data sets and keep the required columns for analysis

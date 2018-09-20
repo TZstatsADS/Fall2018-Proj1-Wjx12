@@ -1,6 +1,6 @@
 ---
 title: "Stem Completion"
-author: "Arpita Shah and Tian Zheng"
+author: "Jiaxi Wu"
 output:
   html_document:
     df_print: paged
@@ -33,7 +33,7 @@ library(DT)
 ### Step 1 - Load the data to be cleaned and processed
 
 ```{r read data, warning=FALSE, message=FALSE}
-urlfile<-'https://raw.githubusercontent.com/rit-public/HappyDB/master/happydb/data/cleaned_hm.csv'
+urlfile <-'https://raw.githubusercontent.com/rit-public/HappyDB/master/happydb/data/cleaned_hm.csv'
 hm_data <- read_csv(urlfile)
 ```
 
@@ -78,7 +78,7 @@ We remove stopwords provided by the "tidytext" package and also add custom stopw
 data("stop_words")
 
 word <- c("happy","ago","yesterday","lot","today","months","month",
-                 "happier","happiest","last","week","past")
+                 "happier","happiest","last","week","past", "day", "moment", "time")
 
 stop_words <- stop_words %>%
   bind_rows(mutate(tibble(word), lexicon = "updated"))
